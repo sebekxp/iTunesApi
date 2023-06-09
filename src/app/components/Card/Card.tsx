@@ -43,7 +43,7 @@ const CardComponent = ({
   const borderClassNameProperties = 'border border-gray-500';
   const hoverClassNameProperties = 'hover:bg-[color:var(--greySecondary)]';
   const className = `
-        flex items-center w-full rounded-lg shadow 
+        flex items-center flex-col sm:flex-row w-full rounded-lg shadow 
         ${bgFit ? 'bg-[color:var(--background)]' : 'bg-[color:var(--greyPrimary)]'} 
         ${withScaling ? scalingClassNameProperties : ''} 
         ${withBorder ? borderClassNameProperties : ''} 
