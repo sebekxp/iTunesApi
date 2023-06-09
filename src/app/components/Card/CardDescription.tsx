@@ -1,5 +1,3 @@
-import { Children } from 'react';
-
 type CardDescriptionProps = {
   text: string;
 };
