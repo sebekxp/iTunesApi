@@ -1,5 +1,9 @@
-export default function Loading(){
-    return <h1>
-        Loading.tsx root....
-    </h1>
+import { Spinner } from './components/Spinner';
+
+export default function Loading() {
+  return (
+    <div className="flex justify-center items-center h-screen">
+      <Spinner />
+    </div>
+  );
 }
