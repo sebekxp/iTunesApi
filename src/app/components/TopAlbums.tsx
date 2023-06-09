@@ -1,6 +1,4 @@
 'use client';
-import { useEffect } from 'react';
-import { useRecoilState, useRecoilValue } from 'recoil';
 import {
   getArtist,
   getCategory,
@@ -9,9 +7,11 @@ import {
   getReleaseDate,
   getRights,
   getTitle,
-} from '../helpers/extractors';
-import { iTunesState } from '../store/atoms';
-import { filteredQuery } from '../store/selectors';
+} from '@/app/helpers/extractors';
+import { iTunesState } from '@/app/store/atoms';
+import { filteredQuery } from '@/app/store/selectors';
+import { useEffect } from 'react';
+import { useRecoilState, useRecoilValue } from 'recoil';
 import { Itunes } from '../types/itunes';
 import { Card } from './Card/Card';
 
@@ -43,5 +43,3 @@ export const TopAlbums = ({ data }: TopAlbumsProps) => {
     </>
   );
 };
-
-function filteredData(data: Itunes) {}

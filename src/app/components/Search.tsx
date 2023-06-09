@@ -1,7 +1,7 @@
 'use client';
 import { ChangeEvent, useState } from 'react';
 import { useRecoilState } from 'recoil';
-import { searchQueryState } from '../store/atoms';
+import { searchQueryState } from '@/app/store/atoms';
 
 export const Search = () => {
   const [_, setQuery] = useRecoilState(searchQueryState);
