@@ -24,7 +24,17 @@ export default function Album() {
   const pathname = usePathname();
   const albumName = pathname.split('/')[2];
   const filteredData = useRecoilValue(filteredQuery);
+
+  /**
+   * While being at this location (/player/{albumName}), we want to know the next and previous albums.
+   * Therefore, based on the album list, we find the ones that start with the same URL as the one in
+   * the URL bar. Then, using the index, we select the previous and next albums. This way, we can easily
+   * navigate between albums using the arrow buttons.
+   */
   const index = filteredData.findIndex((entry) =>
+    /**
+     * Checks if the link of an entry starts with the decoded album name converted to URL format.
+     */
     getLink(entry).startsWith(decodeAlbumNameToUrl(albumName)),
   );
   const entry = filteredData[index];
@@ -32,6 +42,9 @@ export default function Album() {
   const prev = filteredData[index - 1];
 
   useEffect(() => {
+    /**
+     * Force the user to go back to the home page when there is no data in store
+     */
     if (!entry) {
       return router.push('/');
     }
@@ -43,6 +56,10 @@ export default function Album() {
 
   const handlePrevNextClick = (entry: Entry) => {
     const link = getLink(entry);
+    /**
+     * Handles extreme cases when we don't have a previous element (the current one is the first)
+     * and the next one (when the current one is the last) otherwise, it will redirect to the indicated album.
+     */
     if (link) {
       router.push(`/player/${encodeUrlToAlbumName(link)}`);
     }

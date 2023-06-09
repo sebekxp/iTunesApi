@@ -1,6 +1,9 @@
 type CardImageProps = {
   src: string;
   alt: string;
+  /**
+   * Indicates whether the card should be 140x140 or 216x216
+   */
   small?: boolean;
 };
 

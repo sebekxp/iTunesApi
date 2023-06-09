@@ -1,19 +1,31 @@
+import { encodeUrlToAlbumName } from '@/app/helpers/encodeDecode';
+import { getLink } from '@/app/helpers/extractors';
+import { Entry } from '@/app/types/itunes';
 import Link from 'next/link';
 import { CardBody } from './CardBody';
 import { CardDescription } from './CardDescription';
 import { CardImage } from './CardImage';
 import { CardSubtitle } from './CardSubtitle';
 import { CardTitle } from './CardTitle';
-import { Entry, Itunes } from '@/app/types/itunes';
-import { getLink } from '@/app/helpers/extractors';
-import { encodeUrlToAlbumName } from '@/app/helpers/encodeDecode';
 
 type CardPorps = {
   entry: Entry;
   children: React.ReactNode;
+  /**
+   * Indicates whether the background of the card should match the background of the page.
+   */
   bgFit?: boolean;
+  /**
+   * Indicates whether the card should have scaling effect.
+   */
   withScaling?: boolean;
+  /**
+   * Indicates whether the card should have a border.
+   */
   withBorder?: boolean;
+  /**
+   * Indicates whether the card should have a hover effect.
+   */
   withHover?: boolean;
 };
 

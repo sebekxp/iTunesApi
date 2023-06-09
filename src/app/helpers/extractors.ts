@@ -1,5 +1,8 @@
-import { Entry, IMImage } from '../types/itunes';
+import { Entry } from '../types/itunes';
 
+/**
+ * Allowed sizes of images that are available in the api
+ */
 type ImageHeight = '55' | '60' | '170';
 
 /**
