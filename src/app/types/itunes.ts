@@ -5,31 +5,31 @@ export type Itunes = {
 export type Feed = {
   author: Author;
   entry: Entry[];
-  updated: Icon;
-  rights: Icon;
-  title: Icon;
-  icon: Icon;
+  updated: Body;
+  rights: Body;
+  title: Body;
+  icon: Body;
   link: Link[];
-  id: Icon;
+  id: Body;
 };
 
 export type Author = {
-  name: Icon;
-  uri: Icon;
+  name: Body;
+  uri: Body;
 };
 
-export type Icon = {
+export type Body = {
   label: string;
 };
 
 export type Entry = {
-  'im:name': Icon;
+  'im:name': Body;
   'im:image': IMImage[];
-  'im:itemCount': Icon;
+  'im:itemCount': Body;
   'im:price': IMPrice;
   'im:contentType': EntryIMContentType;
-  rights: Icon;
-  title: Icon;
+  rights: Body;
+  title: Body;
   link: Link;
   id: ID;
   'im:artist': IMArtist;
@@ -105,7 +105,7 @@ export type Currency = 'USD';
 
 export type IMReleaseDate = {
   label: Date;
-  attributes: Icon;
+  attributes: Body;
 };
 
 export type Link = {
