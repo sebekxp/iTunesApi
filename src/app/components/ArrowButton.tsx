@@ -1,9 +1,15 @@
 type ArrowButtonProps = {
+  /**
+   * Indicates whether the icon in the button should face left or right
+   */
   direction: 'left' | 'right';
+  /**
+   * An onClick action that will be called when the button is pressed
+   */
   onClick: () => void;
 };
 
-export function ArrowButton({ direction = 'right', onClick }: ArrowButtonProps) {
+export const ArrowButton = ({ direction = 'right', onClick }: ArrowButtonProps) => {
   return (
     <button
       onClick={onClick}
@@ -27,4 +33,4 @@ export function ArrowButton({ direction = 'right', onClick }: ArrowButtonProps) 
       <span className="sr-only">Arrow button</span>
     </button>
   );
-}
+};
