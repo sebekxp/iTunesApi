@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "playwright test tests && playwright show-report"
   },
   "dependencies": {
     "@types/node": "20.2.5",
@@ -24,6 +25,7 @@
     "typescript": "5.1.3"
   },
   "devDependencies": {
+    "@playwright/test": "^1.35.0",
     "eslint-config-prettier": "^8.8.0"
   }
 }
