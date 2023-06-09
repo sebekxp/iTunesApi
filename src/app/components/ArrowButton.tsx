@@ -12,6 +12,7 @@ type ArrowButtonProps = {
 export const ArrowButton = ({ direction = 'right', onClick }: ArrowButtonProps) => {
   return (
     <button
+      data-testid={direction === 'left' ? 'button-prev' : 'button-next'}
       onClick={onClick}
       style={{ transform: direction === 'left' ? 'rotate(180deg)' : 'none' }}
       type="button"

@@ -40,6 +40,7 @@ export const Search = () => {
           </svg>
         </div>
         <input
+          data-testid="default-search"
           type="search"
           id="default-search"
           className="block w-full p-4 pl-10 text-sm rounded-lg bg-[color:var(--greySecondary)] focus:border-[color:var(--greySecondary)] ring-black"

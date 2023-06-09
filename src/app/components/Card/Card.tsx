@@ -51,7 +51,7 @@ const CardComponent = ({
   `;
 
   return (
-    <Link className={className} href={`/player/${albumName}`}>
+    <Link className={className} href={`/player/${albumName}`} data-testid="card-element">
       {children}
     </Link>
   );
