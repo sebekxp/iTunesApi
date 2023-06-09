@@ -2,10 +2,10 @@ import { Suspense } from 'react';
 import { Search } from './components/Search';
 import { TopAlbums } from './components/TopAlbums';
 import { Itunes } from './types/itunes';
+import { Spinner } from './components/Spinner';
 
 export default async function Home() {
   const data = await getItunesData();
-
   return (
     <main>
       <div className="container mx-auto px-4">
@@ -14,7 +14,7 @@ export default async function Home() {
             iTunes Store Top Albums
           </h1>
           <Search />
-          <Suspense fallback={<h1>🌀 Loading...</h1>}>
+          <Suspense fallback={<Spinner />}>
             <TopAlbums data={data} />
           </Suspense>
         </div>
@@ -29,6 +29,7 @@ export default async function Home() {
  */
 async function getItunesData(): Promise<Itunes> {
   const res = await fetch('https://itunes.apple.com/us/rss/topalbums/limit=100/json');
+
   if (!res.ok) {
     throw new Error('Failed to fetch data from iTunes API');
   }
