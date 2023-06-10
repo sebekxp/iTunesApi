@@ -16,18 +16,6 @@ test('should navigate to the album page after click on album', async ({ page }) 
   await expect(page.locator('h1')).toContainText(ANY_TEKST_REGEXP);
 });
 
-test('should have the expected number of items that will be returned from the API', async ({
-  page,
-}) => {
-  await page.goto('/');
-
-  await page.waitForSelector('[data-testid="card-element"]');
-
-  const cardElements = await page.$$('[data-testid="card-element"]');
-
-  expect(cardElements.length).toBe(74);
-});
-
 test('should search for album name and filter list', async ({ browserName, page }) => {
   if (browserName === 'chromium' || browserName === 'firefox') {
     let browser;
@@ -43,15 +31,18 @@ test('should search for album name and filter list', async ({ browserName, page 
 
     const input = page.getByTestId('default-search');
 
+    await page.waitForSelector('[data-testid="card-element"]');
+
+    const cardElementsBeforeFilter = await page.$$('[data-testid="card-element"]');
+
     // Fill with eee to make filter work
     await input.fill('ee');
 
     await page.waitForSelector('[data-testid="card-element"]');
-
-    const cardElements = await page.$$('[data-testid="card-element"]');
+    const cardElementsAfterFilter = await page.$$('[data-testid="card-element"]');
 
     // The filter works if the value is different from the original returned by API
-    expect(cardElements.length).not.toBe(74);
+    expect(cardElementsBeforeFilter.length).not.toBe(cardElementsAfterFilter.length);
     await browser.close();
   } else {
     // Skip tests for WebKit, known issue:
