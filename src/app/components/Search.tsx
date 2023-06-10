@@ -13,6 +13,12 @@ export const Search = () => {
     setQuery(inputValue);
   };
 
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+    }
+  };
+
   return (
     <form className="w-full">
       <label
@@ -48,6 +54,7 @@ export const Search = () => {
           required
           value={value}
           onChange={onChange}
+          onKeyDown={handleKeyDown}
         />
       </div>
     </form>
