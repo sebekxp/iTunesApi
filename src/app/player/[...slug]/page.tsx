@@ -87,8 +87,8 @@ export default function Album() {
   };
 
   return (
-    <div className="container mx-auto py-32 px-8 sm:px-16 md:px-32">
-      <h1 className="mb-10 py-4 text-3xl sm:text-4xl font-extrabold leading-none tracking-tight md:text-5xl lg:text-6xl w-full overflow-hidden whitespace-nowrap overflow-ellipsis">
+    <div className="container mx-auto px-8 py-32 sm:px-16 md:px-32">
+      <h1 className="mb-10 w-full overflow-hidden overflow-ellipsis whitespace-nowrap py-4 text-3xl font-extrabold leading-none tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
         {getTitle(entry)}
       </h1>
       <div className="mb-5">

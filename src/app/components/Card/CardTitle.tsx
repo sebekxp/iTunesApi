@@ -4,7 +4,7 @@ type CardTitleProps = {
 
 export const CardTitle = ({ title }: CardTitleProps) => {
   return (
-    <h5 className="w-full mb-2 text-xl sm:text-2xl font-bold tracking-tight text-white overflow-hidden overflow-ellipsis">
+    <h5 className="mb-2 w-full overflow-hidden overflow-ellipsis text-xl font-bold tracking-tight text-white sm:text-2xl">
       {title}
     </h5>
   );

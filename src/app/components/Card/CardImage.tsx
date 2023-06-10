@@ -15,7 +15,7 @@ export const CardImage = ({ src, alt, small = true }: CardImageProps) => {
   const height = small ? 140 : 216;
   return (
     <img
-      className="object-cover rounded-md w-45 m-4"
+      className="w-45 m-4 rounded-md object-cover"
       src={src}
       alt={alt}
       /**

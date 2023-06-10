@@ -23,15 +23,15 @@ export const Search = () => {
     <form className="w-full">
       <label
         htmlFor="default-search"
-        className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+        className="sr-only mb-2 text-sm font-medium text-gray-900 dark:text-white"
       >
         Search
       </label>
       <div className="relative">
-        <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+        <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
           <svg
             aria-hidden="true"
-            className="w-5 h-5 text-[color:var(--redPrimary)]"
+            className="h-5 w-5 text-[color:var(--redPrimary)]"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -49,7 +49,7 @@ export const Search = () => {
           data-testid="default-search"
           type="search"
           id="default-search"
-          className="block w-full p-4 pl-10 text-sm rounded-lg bg-[color:var(--greySecondary)] focus:border-[color:var(--greySecondary)] ring-black"
+          className="block w-full rounded-lg bg-[color:var(--greySecondary)] p-4 pl-10 text-sm ring-black focus:border-[color:var(--greySecondary)]"
           placeholder="Search..."
           required
           value={value}

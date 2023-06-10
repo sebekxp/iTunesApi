@@ -16,11 +16,11 @@ export const ArrowButton = ({ direction = 'right', onClick }: ArrowButtonProps) 
       onClick={onClick}
       style={{ transform: direction === 'left' ? 'rotate(180deg)' : 'none' }}
       type="button"
-      className="text-[color:var(--redPrimary)] border border-[color:var(--redPrimary)] hover:bg-[color:var(--redPrimary)] hover:text-white focus:ring-4 focus:outline-none focus:ring-[color:var(--redPrimary)] font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2"
+      className="mr-2 inline-flex items-center rounded-lg border border-[color:var(--redPrimary)] p-2.5 text-center text-sm font-medium text-[color:var(--redPrimary)] hover:bg-[color:var(--redPrimary)] hover:text-white focus:outline-none focus:ring-4 focus:ring-[color:var(--redPrimary)]"
     >
       <svg
         aria-hidden="true"
-        className="w-5 h-5"
+        className="h-5 w-5"
         fill="currentColor"
         viewBox="0 0 20 20"
         xmlns="http://www.w3.org/2000/svg"

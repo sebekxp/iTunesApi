@@ -4,7 +4,7 @@ type CardSubtitleProps = {
 
 export const CardSubtitle = ({ subtitle }: CardSubtitleProps) => {
   return (
-    <h6 className="mb-3 sm:text-xl font-normal text-[color:var(--redPrimary)] overflow-hidden overflow-ellipsis">
+    <h6 className="mb-3 overflow-hidden overflow-ellipsis font-normal text-[color:var(--redPrimary)] sm:text-xl">
       {subtitle}
     </h6>
   );

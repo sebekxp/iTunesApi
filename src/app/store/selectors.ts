@@ -8,7 +8,7 @@ export const filteredQuery = selector({
   get: ({ get }) => {
     const query = get(searchQueryState);
     const iTunesData = get(iTunesState);
-    
+
     return (
       iTunesData?.feed?.entry?.filter((entry) =>
         normalizeText(getTitle(entry)).includes(normalizeText(query)),
