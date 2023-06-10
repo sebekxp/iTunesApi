@@ -1,6 +1,6 @@
 # Player
 
-Due to the inability to stream music directly from this API, it was decided to add something resembling a player (which doesn't actually play😅), but visually imitates one. The player allows us to scroll through albums on the list one by one using arrows. We also have the option to return to the list by clicking the arrow at the top left.
+Due to the inability to stream music directly from this API, it was decided to add something resembling a player (which doesn't actually play😅), but visually imitates one. The player allows us to scroll through albums on the list one by one using arrows. We also have the option to return to the list by clicking the arrow at the top left. The player displays only the results that have not been filtered out by the search. This means that if we narrow the search down to two albums, the player will show those two albums that have remained.
 
 ![click](/data/player.png)
 
