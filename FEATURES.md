@@ -14,11 +14,12 @@ The player can be accessed by clicking on a specific album from the list.
 
 The system utilizes dynamic segments that are either populated at request time or pre-rendered during compile time. This enables rendering of each album individually, generating a new link upon clicking.
 
-`player` folder was created in the project and a dynamic segment `[slug]` was created in it, which was later replaced by the names of individual album
+`player` folder was created in the project and a dynamic segment `[...slug]` was created and extended so that it captures all subsequent segments in it, which will later be replaced with the names of individual albums along with their identifiers
 
-![slug](/data/slug.png)
-![url](/data/url1.png)
-![url](/data/url2.png)
+
+![slug](/data/slug1.png)
+![slug](/data/slug2.png)
+![slug](/data/slug3.png)
 
 ## Composing children as components
 
