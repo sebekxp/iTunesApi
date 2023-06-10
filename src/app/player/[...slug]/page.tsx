@@ -22,7 +22,28 @@ import { useRecoilValue } from 'recoil';
 export default function Album() {
   const router = useRouter();
   const pathname = usePathname();
-  const albumName = pathname.split('/')[2];
+  /**
+   * Extracts the album name and identifier or just the identifier from a URL path.
+   *
+   * @param {string} pathname - The pathname from which to extract the album name and identifier.
+   * @returns {string} The album name and identifier separated by a slash ("/") or just the identifier.
+   *
+   * @description
+   * This expression takes a pathname string in the format "/player/{albumName}/{identifier}" and
+   * extracts either the album name and identifier separated by a slash ("/") or just the identifier,
+   * depending on the pattern. It splits the pathname by the "/" character, filters out the elements
+   * at indices 0 and 1 (which are not part of the album name or identifier), and joins the remaining
+   * elements with a slash ("/").
+   *
+   * If the pathname matches the pattern and contains both the album name and identifier, the function
+   * returns them separated by a slash ("/"). If the pathname only contains the identifier, the function
+   * returns just the identifier. If the pathname does not match the pattern or is empty, the function
+   * returns an empty string.
+   */
+  const albumName = pathname
+    .split('/')
+    .filter((_, index) => ![0, 1].includes(index))
+    .join('/');
   const filteredData = useRecoilValue(filteredQuery);
 
   /**
